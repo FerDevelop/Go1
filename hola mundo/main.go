@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 const miAltura int = 183
 
@@ -21,5 +25,11 @@ func main() {
 	fmt.Println(miCadena)
 	fmt.Printf("funcion Printf: la variable es del tipo %T", miCadena)
 	fmt.Println("\nMi estatura es:", miAltura, "cm y no va a cambiar")
-	fmt.Printf("el tipo de la variable miAltura es %T", miAltura)
+	fmt.Printf("el tipo de la variable miAltura es %T\n", miAltura)
+
+	leer := bufio.NewReader(os.Stdin)
+	fmt.Print("introduci el texto por favor: ")
+	varIngresousuario, _ := leer.ReadString('\n')
+	fmt.Println("has ingresado el texto: ", varIngresousuario)
+
 }
