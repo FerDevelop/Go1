@@ -4,6 +4,8 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
+	"strings"
 )
 
 const miAltura int = 183
@@ -31,5 +33,15 @@ func main() {
 	fmt.Print("introduci el texto por favor: ")
 	varIngresousuario, _ := leer.ReadString('\n')
 	fmt.Println("has ingresado el texto: ", varIngresousuario)
+
+	leerConsola := bufio.NewReader(os.Stdin)
+	fmt.Print("introduci un numero por favor: ")
+	inputUsuario, _ := leerConsola.ReadString('\n')
+	unDecimal, err := strconv.ParseFloat(strings.TrimSpace(inputUsuario), 64)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println("el valor ingresado es", unDecimal)
+	}
 
 }
